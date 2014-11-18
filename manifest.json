@@ -1,0 +1,29 @@
+{
+	"name" : "Start Page",
+	"description" : "Startpage for productive",
+	"version" : "0.1",
+	"homepage_url": "http://in2v.com",
+	"icons" : {
+		"32" : "resource/banner-icon.png",
+		"128" : "resource/icon.png"
+	},
+	"chrome_url_overrides": {
+		"newtab" : "page.htm"
+	},
+	"background" : {
+		"scripts" : ["launcher.js"],
+		"persistent": false
+	},
+	"browser_action" :{
+		"default_icon" : "resource/banner-icon.png"
+	},
+	"permissions": [
+		"bookmarks",
+		"topSites",
+		"history",
+		"chrome://favicon/*",
+		"*://*/*"
+	],
+	"content_security_policy" : "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"manifest_version" : 2
+}
