@@ -9,7 +9,7 @@ chrome.topSites.get(function(sites) {
 	var dl = document.getElementsByTagName('dl')[0];
 		sites = sites.slice(0,10);
 	for(var i in sites){
-		dl.innerHTML += '<dd><img src="chrome://favicon/'+ sites[i].url +'" class="favicon"><a href="'+ sites[i].url +'">'+ sites[i].title +'</a></dd>';
+		dl.innerHTML += '<dd><a href="'+ sites[i].url +'"><img src="chrome://favicon/'+ sites[i].url +'" class="favicon">'+ sites[i].title +'</a></dd>';
 	}
 });
 
@@ -37,7 +37,7 @@ chrome.bookmarks.getTree(function(root){
 				sites = folder.children,
 				sitesView = '';
 			for(var i in sites){
-				sitesView += '<dd><img src="chrome://favicon/'+ sites[i].url +'" class="favicon"><a href="'+ sites[i].url +'">'+ sites[i].title +'</a></dd>';
+				sitesView += '<dd><a href="'+ sites[i].url +'"><img src="chrome://favicon/'+ sites[i].url +'" class="favicon">'+ sites[i].title +'</a></dd>';
 			}
 			var section = document.getElementsByTagName('section')[0];
 			section.innerHTML += '<dl><dt>'+ folder.title +'</dt>'+ sitesView +'</dl>';
